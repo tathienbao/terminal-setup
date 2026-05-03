@@ -26,7 +26,7 @@ if ! grep -q "starship init bash" "$BASHRC"; then
 # Terminal ricing
 eval "$(starship init bash)"
 alias ls='lsd'
-alias cat='bat'
+alias cat='batcat'
 EOF
   echo "    Added to ~/.bashrc."
 else
