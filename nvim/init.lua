@@ -58,5 +58,15 @@ require("lazy").setup({
   },
 })
 
+-- Auto-open PDF in Zathura and close the buffer
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*.pdf",
+  callback = function()
+    local file = vim.fn.expand("%:p")
+    vim.fn.jobstart({ "zathura", file }, { detach = true })
+    vim.cmd("bdelete!")
+  end,
+})
+
 -- Apply theme
 vim.cmd("colorscheme dracula")

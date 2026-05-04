@@ -55,8 +55,8 @@ curl -fLo ~/.config/bat/themes/Tokyo\ Night\ Day.tmTheme \
 
 batcat cache --build
 
-echo "==> [5/6] Installing Neovim..."
-sudo apt install -y neovim
+echo "==> [5/6] Installing Neovim and Zathura..."
+sudo apt install -y neovim zathura
 mkdir -p ~/.config/nvim
 [ -f ~/.config/nvim/init.lua ] && cp ~/.config/nvim/init.lua ~/.config/nvim/init.lua.bak && echo "    Backed up existing config to init.lua.bak"
 cp "$SCRIPT_DIR/nvim/init.lua" ~/.config/nvim/init.lua

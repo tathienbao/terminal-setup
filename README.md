@@ -11,6 +11,7 @@ A setup script for a beautiful terminal on Linux (Ubuntu/Debian).
 | [lsd](https://github.com/lsd-rs/lsd) | `ls` replacement with icons and colors |
 | [bat](https://github.com/sharkdp/bat) | `cat` replacement with syntax highlighting (Dracula theme) |
 | [Neovim](https://neovim.io/) | Modern vim with plugins: Dracula theme, Treesitter, lualine, nvim-tree |
+| [Zathura](https://pwmt.org/projects/zathura/) | Lightweight PDF viewer — opens automatically when neovim opens a `.pdf` file |
 
 ### Bat themes included
 
