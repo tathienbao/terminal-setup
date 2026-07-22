@@ -58,13 +58,20 @@ require("lazy").setup({
   },
 })
 
--- Auto-open PDF in Zathura and close the buffer without breaking layout
+-- Auto-open PDF in Zathura and restore previous buffer (preserves layout)
 vim.api.nvim_create_autocmd({ "BufReadCmd", "BufNewFile" }, {
   pattern = "*.pdf",
   callback = function()
     local file = vim.fn.expand("%:p")
+    local pdf_buf = vim.fn.bufnr("%")
+    local alt = vim.fn.bufname("#")
     vim.fn.jobstart({ "zathura", file }, { detach = true })
-    vim.cmd("bwipeout!")
+    if alt ~= "" and vim.fn.bufexists(alt) == 1 then
+      vim.cmd("buffer " .. alt)
+      vim.cmd("bwipeout! " .. pdf_buf)
+    else
+      vim.cmd("bwipeout!")
+    end
   end,
 })
 
