@@ -7,4 +7,4 @@ set statusbar-fg           "#d4d4d4"
 set inputbar-bg            "#2d2d2d"
 set inputbar-fg            "#d4d4d4"
 
-map <C-d> toggle recolor
+map <C-d> set recolor !recolor
