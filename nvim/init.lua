@@ -58,13 +58,13 @@ require("lazy").setup({
   },
 })
 
--- Auto-open PDF in Zathura and close the buffer
-vim.api.nvim_create_autocmd("BufReadPost", {
+-- Auto-open PDF in Zathura and close the buffer without breaking layout
+vim.api.nvim_create_autocmd({ "BufReadCmd", "BufNewFile" }, {
   pattern = "*.pdf",
   callback = function()
     local file = vim.fn.expand("%:p")
     vim.fn.jobstart({ "zathura", file }, { detach = true })
-    vim.cmd("bdelete!")
+    vim.cmd("bwipeout!")
   end,
 })
 
