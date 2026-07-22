@@ -1,0 +1,10 @@
+set recolor-lightcolor     "#1e1e1e"
+set recolor-darkcolor      "#d4d4d4"
+set default-bg             "#1e1e1e"
+set default-fg             "#d4d4d4"
+set statusbar-bg           "#2d2d2d"
+set statusbar-fg           "#d4d4d4"
+set inputbar-bg            "#2d2d2d"
+set inputbar-fg            "#d4d4d4"
+
+map <C-d> toggle recolor
