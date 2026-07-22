@@ -68,5 +68,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+-- Use real tabs for C files (42 norminette requires tabs, not spaces)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp" },
+  callback = function()
+    vim.opt_local.expandtab = false
+  end,
+})
+
 -- Apply theme
 vim.cmd("colorscheme dracula")
